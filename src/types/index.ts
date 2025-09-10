@@ -1,14 +1,9 @@
-import { Animated as RNAnimated } from "react-native";
-
 export type AlertType = "error" | "success";
 
 export interface AlertItem {
     id: string;
     message: string;
     type: AlertType;
-    timeoutId: ReturnType<typeof setTimeout>;
-    translateY: RNAnimated.Value;
-    scale: RNAnimated.Value;
 }
 
 export interface AlertContextProps {
@@ -18,4 +13,15 @@ export interface AlertContextProps {
 
 export interface AlertProviderProps {
     children: React.ReactNode;
+}
+
+export interface AlertComponentProps {
+    id: string;
+    message: string;
+    type: AlertType;
+    index: number;
+    insets: { top: number };
+    onRemove: (id: string) => void;
+    alertHeight: number;
+    alertMargin: number;
 }

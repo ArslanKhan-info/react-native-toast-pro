@@ -1,6 +1,6 @@
 {
   "name": "react-native-toast-pro",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "A beautiful and customizable toast notification component for React Native",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,18 +21,20 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arslan-khan/react-native-toast-pro.git"
+    "url": "git+https://github.com/ArslanKhan-info/react-native-toast-pro.git"
   },
   "bugs": {
-    "url": "https://github.com/arslan-khan/react-native-toast-pro/issues"
+    "url": "https://github.com/ArslanKhan-info/react-native-toast-pro/issues"
   },
-  "homepage": "https://github.com/arslan-khan/react-native-toast-pro#readme",
+  "homepage": "https://github.com/ArslanKhan-info/react-native-toast-pro#readme",
   "peerDependencies": {
     "react": ">=16.8.0",
-    "react-native": ">=0.60.0"
+    "react-native": ">=0.60.0",
+    "react-native-reanimated": ">=3.0.0"
   },
   "dependencies": {
-    "react-native-safe-area-context": "^5.6.1"
+    "react-native-safe-area-context": "^5.6.1",
+    "react-native-reanimated": "^3.17.4"
   },
   "devDependencies": {
     "@types/react": "^19.1.0",

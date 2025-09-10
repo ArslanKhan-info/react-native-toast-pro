@@ -1,16 +1,25 @@
 # React Native Toast Alert
 
-A beautiful and customizable toast notification component for React Native with smooth animations and TypeScript support.
+A beautiful and customizable toast notification component for React Native with smooth animations powered by react-native-reanimated and TypeScript support.
 
 ## Features
 
-- 🎨 Beautiful animations with spring and timing effects
+- 🎨 Beautiful animations with react-native-reanimated (spring and timing effects)
 - 📱 Safe area aware positioning
 - 🎯 Multiple alert types (success, error)
 - ⚡ Lightweight and performant
 - 🔧 Fully customizable colors and styling
 - 📦 TypeScript support
 - 🎭 Context-based API for easy usage
+- 🎬 Smooth GIF animations for visual feedback
+
+## Demo
+
+### Success Toast
+![Success Toast](./media/success.gif)
+
+### Error Toast
+![Error Toast](./media/error.gif)
 
 ## Installation
 
@@ -23,8 +32,10 @@ npm install react-native-toast-pro
 Make sure you have these peer dependencies installed:
 
 ```bash
-npm install react-native-safe-area-context
+npm install react-native-safe-area-context react-native-reanimated
 ```
+
+**Note:** For react-native-reanimated, you may need to follow additional setup instructions based on your React Native version. Please refer to the [react-native-reanimated documentation](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/installation) for detailed setup instructions.
 
 ## Usage
 
@@ -135,21 +146,23 @@ Static service with the same methods as the hook:
 
 ### Toast Duration
 
-By default, toasts are displayed for 3 seconds. You can modify this in the `ToastProvider.tsx` file by changing the timeout value in the `showAlert` function.
+By default, toasts are displayed for 1.5 seconds. You can modify this in the `AlertComponent.tsx` file by changing the timeout value in the `useEffect` hook.
 
 ### Animation Settings
 
-The component uses React Native's Animated API with the following default settings:
+The component uses react-native-reanimated with the following default settings:
 
-- **Scale Animation**: Spring animation with tension: 100, friction: 4
-- **Slide Animation**: Timing animation with duration: 500ms
-- **Auto-dismiss**: 3000ms (3 seconds)
+- **Scale Animation**: Spring animation with damping: 4, stiffness: 100
+- **Slide Animation**: Timing animation with duration: 500ms and Easing.out(Easing.exp)
+- **Auto-dismiss**: 1500ms (1.5 seconds)
+- **Exit Animation**: Timing animation with Easing.in(Easing.exp) for smooth removal
 
 ## Requirements
 
 - React Native >= 0.60.0
 - React >= 16.8.0
 - react-native-safe-area-context
+- react-native-reanimated >= 3.0.0
 
 ## License
 
