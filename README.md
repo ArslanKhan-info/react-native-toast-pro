@@ -15,11 +15,10 @@ A beautiful and customizable toast notification component for React Native with 
 
 ## Demo
 
-### Success Toast
-![Success Toast](./media/success.gif)
-
-### Error Toast
-![Error Toast](./media/error.gif)
+<div align="center">
+  <img src="./media/success.gif" alt="Success Toast" width="300" />
+  <img src="./media/error.gif" alt="Error Toast" width="300" />
+</div>
 
 ## Installation
 
