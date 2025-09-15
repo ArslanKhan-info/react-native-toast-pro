@@ -53,6 +53,17 @@ const AlertComponent: React.FC<AlertComponentProps> = ({ id, message, type, inde
         return () => clearTimeout(timeoutId);
     }, [handleRemove]);
 
+    const backgroundColor = useMemo(() => {
+        switch (type) {
+            case 'success':
+                return commonColors.success;
+            case 'error':
+                return commonColors.error;
+            case 'warning':
+                return commonColors.warning;
+        }
+    }, [type])
+
     return (
         <Animated.View
             style={[
@@ -61,7 +72,9 @@ const AlertComponent: React.FC<AlertComponentProps> = ({ id, message, type, inde
                 {
                     top: insets.top + 12 + (index * (alertHeight + alertMargin)),
                 },
-                type === "success" ? styles.successBackground : styles.errorBackground,
+                {
+                    backgroundColor: backgroundColor,
+                }
             ]}
         >
             <Text style={styles.alertText}>{message}</Text>
@@ -86,12 +99,6 @@ const useStyles = (alertHeight: number,) => {
                 color: commonColors.white,
                 fontSize: 16,
                 fontWeight: "bold",
-            },
-            errorBackground: {
-                backgroundColor: commonColors.error,
-            },
-            successBackground: {
-                backgroundColor: commonColors.success,
             },
         })
         , [alertHeight])

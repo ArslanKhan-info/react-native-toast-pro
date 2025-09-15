@@ -1,4 +1,4 @@
-export type AlertType = "error" | "success";
+export type AlertType = "error" | "success" | "warning";
 
 export interface AlertItem {
     id: string;
@@ -9,6 +9,7 @@ export interface AlertItem {
 export interface AlertContextProps {
     showError: (message: string) => void;
     showSuccess: (message: string) => void;
+    showWarning: (message: string) => void;
 }
 
 export interface AlertProviderProps {

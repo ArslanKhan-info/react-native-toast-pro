@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.7] - 2024-12-19
+
+### Added
+- ⚠️ Warning toast type support
+- 🎨 Warning color (#FFA500) for warning toasts
+- 📚 Updated documentation with warning functionality examples
+- 🔧 `showWarning` method in both `useAlert` hook and `AlertService`
+
+### Features
+- Complete warning toast functionality with animations
+- Consistent API design across all toast types (success, error, warning)
+- Updated README with comprehensive warning usage examples
+
 ## [1.0.5] - 2024-12-19
 
 ### Added

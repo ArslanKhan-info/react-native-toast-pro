@@ -6,7 +6,7 @@ A beautiful and customizable toast notification component for React Native with 
 
 - 🎨 Beautiful animations with react-native-reanimated (spring and timing effects)
 - 📱 Safe area aware positioning
-- 🎯 Multiple alert types (success, error)
+- 🎯 Multiple alert types (success, error, warning)
 - ⚡ Lightweight and performant
 - 🔧 Fully customizable colors and styling
 - 📦 TypeScript support
@@ -64,7 +64,7 @@ import { View, Button } from 'react-native';
 import { useAlert } from 'react-native-toast-pro';
 
 export default function MyComponent() {
-  const { showSuccess, showError } = useAlert();
+  const { showSuccess, showError, showWarning } = useAlert();
 
   const handleSuccess = () => {
     showSuccess('Operation completed successfully!');
@@ -74,10 +74,15 @@ export default function MyComponent() {
     showError('Something went wrong!');
   };
 
+  const handleWarning = () => {
+    showWarning('Please check your input!');
+  };
+
   return (
     <View>
       <Button title="Show Success" onPress={handleSuccess} />
       <Button title="Show Error" onPress={handleError} />
+      <Button title="Show Warning" onPress={handleWarning} />
     </View>
   );
 }
@@ -93,6 +98,9 @@ AlertService.showSuccess('Data saved successfully!');
 
 // Show error toast
 AlertService.showError('Failed to save data!');
+
+// Show warning toast
+AlertService.showWarning('Please review your data!');
 ```
 
 ## Customization
@@ -131,6 +139,7 @@ Returns an object with the following methods:
 |--------|------|-------------|
 | showSuccess | (message: string) => void | Shows a success toast |
 | showError | (message: string) => void | Shows an error toast |
+| showWarning | (message: string) => void | Shows a warning toast |
 
 ### AlertService
 
@@ -140,6 +149,7 @@ Static service with the same methods as the hook:
 |--------|------|-------------|
 | showSuccess | (message: string) => void | Shows a success toast |
 | showError | (message: string) => void | Shows an error toast |
+| showWarning | (message: string) => void | Shows a warning toast |
 
 ## Configuration
 

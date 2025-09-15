@@ -21,6 +21,7 @@ export const useAlert = (): AlertContextProps => {
 class AlertService {
     static showError: (message: string) => void;
     static showSuccess: (message: string) => void;
+    static showWarning: (message: string) => void;
 }
 
 // Individual Alert Component to handle its own animations
@@ -47,15 +48,18 @@ export const AlertProvider: React.FC<AlertProviderProps> = ({ children }) => {
 
     const showSuccess = useCallback((message: string) => showAlert(message, "success"), [showAlert]);
 
+    const showWarning = useCallback((message: string) => showAlert(message, "warning"), [showAlert])
+
     const hideAlert = useCallback((id: string) => {
         setAlerts(prev => prev.filter(alert => alert.id !== id));
     }, []);
 
     AlertService.showError = showError;
     AlertService.showSuccess = showSuccess;
+    AlertService.showWarning = showWarning;
 
     return (
-        <AlertContext.Provider value={{ showError, showSuccess }}>
+        <AlertContext.Provider value={{ showError, showSuccess, showWarning }}>
             {children}
             {alerts.map((alert, index) => (
                 <AlertComponent
